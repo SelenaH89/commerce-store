@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: rgb(141, 148, 125);
+}
+.main {
+  display: flex;
+  justify-content: flex-end; /* poravna sve linkove na desnu stranu */
+  background-color: #333; /* primjer pozadinske boje */
+  padding: 10px 20px; /* dodaje malo prostora oko navigacije */
+}
+
+.main a {
+  color: white; /* boja teksta linkova */
+  margin-left: 20px; /* razmak između linkova */
+  text-decoration: none; /* uklanja podvlaku ispod linkova */
+  padding: 5px 10px; /* malo dodatnog prostora oko teksta za bolju čitljivost */
+  transition: background-color 0.3s; /* animacija pozadine prilikom hover efekta */
+}
+
+.main a:hover {
+  background-color: #555; /* promijeni boju pozadine prilikom prelaska mišem preko linka */
+}
+.featured {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.puppy-image {
+  width: 100%;
+  display: block;
+}
+
+.featured-content {
+  position: absolute;
+  top: 50%; /* pomeri sadržaj na sredinu po visini */
+  right: 20px; /* dodaje malo prostora sa desne strane */
+  transform: translateY(
+    -50%
+  ); /* pomera sadržaj nazad na pravu vertikalnu poziciju */
+  color: black;
+}
+
+button {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff4500;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+button:hover {
+  background-color: #e34e00;
+}
+.breeds {
+  text-shadow: 2px 2px whitesmoke;
+  font-family: Arial, sans-serif;
+
+  font-size: 24px;
+  text-align: center;
+}
+
+.product-section {
+  text-align: center;
+  padding: 10px 20px;
+  width: 80%;
+}
+
+.product-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-list li {
+  flex-basis: calc(20% - 10px);
+  margin-right: 10px;
+  text-align: center;
+}
+
+.product-list img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-name {
+  margin-top: 10px;
+}
+
+footer {
+  background-color: #333;
+  width: 100%;
+  display: block;
+}
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 0;
+  color: white;
+}
+
+.address-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.links-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.links-section ul {
+  display: flex;
+  text-decoration: none;
+  list-style-type: none;
+  padding: 0;
+  gap: 20px; /* Ovo dodaje razmak između stavki */
+}
+
+.links-section ul li {
+  margin: 0;
+  a:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+  } /* Uklonite margine kako biste izbegli dodatne razmake između linkova */
+}
+
+.copyright-section {
+  background-color: rgb(115, 216, 115);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: fit-content;
+  padding: 20px 0;
+  color: white;
+}

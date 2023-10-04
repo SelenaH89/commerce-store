@@ -1,0 +1,42 @@
+.main {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* poravna sve linkove na desnu stranu */
+  background-color: #333; /* primjer pozadinske boje */
+  padding: 10px 20px; /* dodaje malo prostora oko navigacije */
+}
+
+.main a {
+  color: white; /* boja teksta linkova */
+  margin-left: 20px; /* razmak između linkova */
+  text-decoration: none; /* uklanja podvlaku ispod linkova */
+  padding: 5px 10px; /* malo dodatnog prostora oko teksta za bolju čitljivost */
+  transition: background-color 0.3s; /* animacija pozadine prilikom hover efekta */
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; // Dodao sam padding za bolji izgled
+}
+
+.main a:hover {
+  background-color: #555; /* promijeni boju pozadine prilikom prelaska mišem preko linka */
+}
+.Logo {
+  color: black;
+  margin-right: auto;
+  text-decoration: none;
+  font-weight: 700;
+}
+.cart {
+  margin-left: 20px; // Dodao sam malo razmaka između linkova i korpe
+}
+
+.Cart:hover {
+  transform: scale(1.5);
+}
+.i {
+  font-size: 50px;
+}
