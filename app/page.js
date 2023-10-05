@@ -1,5 +1,6 @@
 import './globals.scss';
-import Dogs, { dogs } from './components/Dogs';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -13,21 +14,29 @@ export default function Home() {
           />
         </div>
         <div className="featured-content">
-          <h2>Looking for the Perfect,</h2>
-          <h3>Pure Bred Puppy</h3>
-          <h3>from Europe?</h3>
-          <button>Puppies for sale</button>
+          <h1>Search for the perfect dog is over !</h1>
+          <p className="featured-text">
+            We have puppies that come from a long line of champion bloodlines.
+            <br />
+            These puppies have been by licensed breeders,
+            <br /> and are extremely socialized and healthy.
+          </p>
+          <Link href="/dogs">
+            <button>Puppies for sale</button>
+          </Link>
         </div>
       </section>
       <h1 className="breeds">We have the perfect puppy for you!</h1>
-      <Dogs />
+
       <section className="product-section">
         <div className="product-container">
           <div className="product-card">
             <ul className="product-list">
               <li>
-                <img
-                  src="https://floridafurbabies.com/azure/sunshinestatepups/pups/36f8bcc7-d66e-49f5-9e8f-67abc209b548.png?preset=detail"
+                <Image
+                  src="/images/01.jpg"
+                  width={200}
+                  height={100}
                   alt="Shih Poo"
                 />
 
@@ -35,38 +44,45 @@ export default function Home() {
               </li>
 
               <li>
-                <img
-                  src="https://floridafurbabies.com/azure/sunshinestatepups/pups/4d40063f-4502-4537-9f53-c683ee945df1.png?preset=detail"
+                <Image
+                  src="/images/02.jpg"
+                  width={200}
+                  height={100}
                   alt="Poodle"
                 />
                 <p className="product-name">Poodle</p>
               </li>
 
               <li>
-                <img
-                  src="https://floridafurbabies.com/azure/sunshinestatepups/pups/fe3300fa-e020-427c-9290-ef8412c1a055.png?preset=detail"
+                <Image
+                  src="/images/03.jpg"
+                  width={200}
+                  height={100}
                   alt="Aussiechon"
                 />
                 <p className="product-name">Aussiechon</p>
               </li>
 
               <li>
-                <img
-                  src="https://floridafurbabies.com/azure/sunshinestatepups/pups/94ae280b-ef36-4cf0-8d20-a981b27343c9.jpg?preset=detail"
+                <Image
+                  src="/images/04.jpg"
+                  width={200}
+                  height={100}
                   alt="French Bulldog"
                 />
                 <p className="product-name">French Bulldog</p>
               </li>
               <li>
-                <img
-                  src="https://floridafurbabies.com/azure/sunshinestatepups/pups/185de450-d783-43a1-b26d-9902ad1e3e66.jpg?preset=detail"
+                <Image
+                  src="/images/05.jpg"
+                  width={200}
+                  height={100}
                   alt="Pomeranian"
                 />
                 <p className="product-name">Pomeranian</p>
               </li>
             </ul>
           </div>
-          ;
         </div>
       </section>
     </div>
