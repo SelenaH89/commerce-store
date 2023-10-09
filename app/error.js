@@ -2,5 +2,5 @@
 import React from 'react';
 
 export default function RootError() {
-  return <div>Ups! Something went wrong</div>;
+  return <div>You are idiot!!!</div>;
 }

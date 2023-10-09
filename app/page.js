@@ -37,10 +37,10 @@ export default function Home() {
                   src="/images/01.jpg"
                   width={200}
                   height={100}
-                  alt="Shih Poo"
+                  alt="American Akita"
                 />
 
-                <p className="product-name">Shih Poo</p>
+                <p className="product-name">American Akita</p>
               </li>
 
               <li>
@@ -48,9 +48,9 @@ export default function Home() {
                   src="/images/02.jpg"
                   width={200}
                   height={100}
-                  alt="Poodle"
+                  alt="American Stafford"
                 />
-                <p className="product-name">Poodle</p>
+                <p className="product-name">American Stafford</p>
               </li>
 
               <li>
@@ -68,18 +68,36 @@ export default function Home() {
                   src="/images/04.jpg"
                   width={200}
                   height={100}
-                  alt="French Bulldog"
+                  alt="Cane Corso"
                 />
-                <p className="product-name">French Bulldog</p>
+                <p className="product-name">Cane Corso</p>
               </li>
               <li>
                 <Image
                   src="/images/05.jpg"
                   width={200}
                   height={100}
-                  alt="Pomeranian"
+                  alt=" Dogue de Bordeaux "
                 />
-                <p className="product-name">Pomeranian</p>
+                <p className="product-name"> Dogue de Bordeaux </p>
+              </li>
+              <li>
+                <Image
+                  src="/images/06.jpg"
+                  width={200}
+                  height={100}
+                  alt="German Shepherd"
+                />
+                <p className="product-name"> German Shepherd</p>
+              </li>
+              <li>
+                <Image
+                  src="/images/07.jpg"
+                  width={200}
+                  height={100}
+                  alt="Golden Retriever"
+                />
+                <p className="product-name"> Golden Retriever</p>
               </li>
             </ul>
           </div>

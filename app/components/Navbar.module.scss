@@ -1,10 +1,9 @@
 .main {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  /* poravna sve linkove na desnu stranu */
   background-color: #333; /* primjer pozadinske boje */
-  padding: 10px 20px; /* dodaje malo prostora oko navigacije */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; /* optional: add some padding around the navbar */
 }
 
 .main a {

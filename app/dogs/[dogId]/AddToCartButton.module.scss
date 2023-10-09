@@ -1,0 +1,31 @@
+// AddToCartButton.module.scss
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.quantityInput {
+  width: 50px;
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.btn {
+  background-color: #007bff;
+  color: white;
+  padding: 7px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &.btnPrimary:hover {
+    background-color: #0056b3;
+  }
+}

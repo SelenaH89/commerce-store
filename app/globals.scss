@@ -58,7 +58,7 @@ button {
   display: block;
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #ff4500;
+  background-color: #00ff08;
   color: white;
   border: none;
   cursor: pointer;
@@ -85,12 +85,12 @@ button:hover {
 .product-list {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .product-list li {
-  flex-basis: calc(20% - 10px);
-  margin-right: 10px;
+  margin: 0 10px;
+  padding: 0;
   text-align: center;
 }
 
@@ -114,61 +114,6 @@ footer {
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 20px 0;
-  color: white;
-}
-
-.address-section {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.links-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.links-section ul {
-  display: flex;
-  text-decoration: none;
-  list-style-type: none;
-  padding: 0;
-  gap: 20px; /* Ovo dodaje razmak između stavki */
-}
-
-.links-section ul li {
-  margin: 0;
-  a:link {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  a:visited {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  a:hover {
-    color: red;
-    background-color: transparent;
-    text-decoration: underline;
-  }
-  a:active {
-    color: yellow;
-    background-color: transparent;
-    text-decoration: underline;
-  }
-}
-
-.copyright-section {
-  background-color: rgb(115, 216, 115);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: fit-content;
   padding: 20px 0;
   color: white;
 }
