@@ -17,7 +17,7 @@ export default function Navbar() {
       <Link href="/dogs">Dogs</Link>
       <Link href="/contactUs">Contact Us</Link>
       <Link href="/checkout">Checkout</Link>
-      <Link href="/thankyou">Thank You</Link>{' '}
+      <Link href="/thankyou">Thank You</Link>
       <Link href="/cart">
         <FontAwesomeIcon icon={faShoppingCart} />
       </Link>

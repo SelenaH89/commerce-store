@@ -17,6 +17,8 @@
     "**/*.jsx",
     "**/*.cjs",
     "**/*.mjs",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "app/cart",
+    "app/thankyou"
   ]
 }

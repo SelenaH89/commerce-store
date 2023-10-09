@@ -16,11 +16,15 @@
   font-style: bold;
   inline-size: none;
 }
+.removeButtonContainer {
+  margin-top: 10px;
+  text-align: center;
+}
 
 .removeButton {
   margin-left: 45%;
   margin-bottom: 10%;
-  background-color: #13aa52;
+  background-color: #f30909;
   border: 1px solid #13aa52;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
