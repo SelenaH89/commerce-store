@@ -1,12 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { getCookie } from '../../public/util/cookies';
+import { getCookies } from '../../public/util/cookies';
 import { parseJson } from '../../public/util/json';
-import {
-  getLocalStorage,
-  setLocalStorage,
-} from '../../public/util/localStorage';
 import style from '../components/CookieBanner.module.scss';
 
 export default function CookieBanner() {

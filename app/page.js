@@ -1,4 +1,5 @@
 import './globals.scss';
+import 'bulma/css/bulma.min.css';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -22,7 +23,7 @@ export default function Home() {
             <br /> and are extremely socialized and healthy.
           </p>
           <Link href="/dogs">
-            <button>Puppies for sale</button>
+            <button className="btn">Puppies for sale</button>
           </Link>
         </div>
       </section>

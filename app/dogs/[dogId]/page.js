@@ -6,8 +6,8 @@ import { getDogs } from '../../../database/dogs';
 import styles from '../page.module.scss';
 import AddToCartButton from './AddToCartButton';
 
-export async function generateMetadata({ params }) {
-  const singleDog = await getDogs(Number(params.dogId));
+export async function SingleDogPage({ props }) {
+  const singleDog = await getDogs(Number(props.params.dogId));
 
   return {
     title: singleDog ? singleDog.name : '',

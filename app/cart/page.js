@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { getDogs } from '../../database/dogs';
 import { getCookie } from '../../public/util/cookies';
@@ -9,25 +10,46 @@ function parsePrice(price) {
   return parseFloat(price.replace(/[^0-9.]/g, ''));
 }
 
-export default async function cart() {
-  const dogCookie = getCookie('dogQuantity');
-  const dogsQuantity = !dogCookie ? [] : parseJson(dogCookie);
-  const dog = await getDogs();
+export default async function Cart() {
+  const cartItemsCookie = getCookie('cart');
+  const cartItemQuantities = !cartItemsCookie ? [] : parseJson(cartItemsCookie);
 
-  const dogsInCart = dog.map((dog) => {
-    const matchingDogCookie = dogsQuantity.find(
-      (dogQuantity) => dog.id === dogQuantity.id,
+  const dogList = await getDogs();
+
+  const cartItemsWithQuantities = dogList.map((dog) => {
+    const matchingDogsFromCookie = cartItemQuantities.find(
+      (cart) => dog.id === cart.id,
     );
-    return { ...dog, quantity: matchingDogCookie?.quantity };
+    return { ...dog, quantity: matchingDogsFromCookie?.quantity };
   });
 
-  const dogsWithQuantity = dogsInCart.filter((dogInCart) => {
-    return dogInCart.quantity >= 1;
-  });
+  console.log('cartItemsWithQuantities', cartItemsWithQuantities);
+  console.log('dogList', dogList);
 
+  const cartItemsWithQuantityGreaterThanOne = cartItemsWithQuantities.filter(
+    (dogInCart) => {
+      return dogInCart.quantity >= 1;
+    },
+  );
+
+  const cartTotalPrice = cartItemsWithQuantityGreaterThanOne.reduce(
+    (sum, dog) => {
+      const price = parsePrice(dog.price);
+      const quantity = parseFloat(dog.quantity);
+
+      console.log(
+        `Dog ID: ${dog.id}, Parsed Price: ${price}, Parsed Quantity: ${quantity}`,
+      );
+
+      if (isNaN(price) || isNaN(quantity)) return sum;
+      const itemTotal = price * quantity;
+      return sum + itemTotal;
+    },
+    0,
+  );
   return (
     <div>
-      {dogsWithQuantity.map((dog) => {
+      {cartItemsWithQuantityGreaterThanOne.map((dog) => {
         const price = parsePrice(dog.price);
         const quantity = parseFloat(dog.quantity);
         const subtotal =
@@ -35,25 +57,23 @@ export default async function cart() {
         return (
           <div key={`dog-${dog.id}`}>
             <h3>{dog.name}</h3>
-            <img
+            <Image
+              className="single-dog"
               src={dog.image}
+              width={400}
+              height={400}
               alt={dog.name}
-              style={{ width: '100px', height: '100px' }}
             />
-            <p>Quantity: {dog.quantity}</p>
-            <p>Price: € {price.toFixed(2)}</p>
-            <p>Subtotal Price: € {subtotal.toFixed(2)} </p>
+            <p className="">Quantity: {dog.quantity}</p>
+            <p className="">Price: € {price.toFixed(2)}</p>
+            <p className="">Subtotal Price: € {subtotal.toFixed(2)} </p>{' '}
+            <RemoveButton id={dog.id} />
             <hr />
           </div>
         );
       })}
-      <h2>
-        Total Price: €{' '}
-        {dogsWithQuantity
-          .reduce((sum, dog) => sum + parsePrice(dog.price) * dog.quantity, 0)
-          .toFixed(2)}
-      </h2>
-      <RemoveButton dog={dog} />
+      <h2>Total Price: €{cartTotalPrice.toFixed(2)}</h2>
+
       <Link href="/checkout">Checkout</Link>
     </div>
   );

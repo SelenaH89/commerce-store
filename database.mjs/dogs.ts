@@ -17,7 +17,7 @@ export const getDogs = cache(async () => {
   return dogs;
 });
 
-export const getDogs = cache(async (id: number) => {
+export const getDogsById = cache(async (id: number) => {
   const [dog] = await sql<Dogs[]>`
   SELECT
     *

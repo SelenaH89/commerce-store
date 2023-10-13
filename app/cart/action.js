@@ -1,33 +1,17 @@
 'use server';
-import { getCookie, setCookie } from '../../public/util/cookies';
+import { cookies } from 'next/headers';
+import { getCookie } from '../../public/util/cookies';
 import { parseJson } from '../../public/util/json';
 
-export default async function deleteDog(id) {
-  const parsedId = Number(id);
-  if (isNaN(parsedId) || parsedId <= 0) {
-    throw new Error('Invalid id parameter. Expected a positive number.');
-  }
-  const dogItemCookie = getCookie('dogQuantity');
+export default async function DeleteDog(id) {
+  const dogItemCookie = getCookie('cart');
 
-  const parsedDogsQuantity = parseJson(dogItemCookie);
-  const dogsQuantity =
-    parsedDogsQuantity !== undefined ? parsedDogsQuantity : [];
+  const dogsQuantity = !dogItemCookie ? [] : parseJson(dogItemCookie);
+  console.log(dogItemCookie);
 
-  if (process.env.NODE_ENV === 'development') {
-    console.debug(dogItemCookie);
-  }
+  const updatedDogsQuantity = dogsQuantity.filter((item) => item.id !== id);
 
-  const updatedDogsQuantity = dogsQuantity.filter(
-    (item) => item.id !== parsedId,
-  );
-
-  try {
-    await setCookie('dogQuantity', JSON.stringify(updatedDogsQuantity));
-  } catch (error) {
-    console.error('Failed to set cookie:', error);
-    // Handle the error here, e.g. show an error message to the user or retry the operation.
-    throw error;
-  }
+  await cookies().set('cart', JSON.stringify(updatedDogsQuantity));
 
   return updatedDogsQuantity.length;
 }
